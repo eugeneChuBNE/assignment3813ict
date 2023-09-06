@@ -1,0 +1,13 @@
+<div class="container">
+    <h2>Channel Conversation</h2>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let message of conversation">
+        {{ message }}
+      </li>
+    </ul>
+    <div class="input-group mt-3">
+      <textarea class="form-control" rows="3"></textarea>
+      <button class="btn btn-primary" type="button">Send</button>
+    </div>
+</div>
+  
