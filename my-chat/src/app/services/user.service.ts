@@ -24,11 +24,32 @@ export class UserService {
     return JSON.parse(localStorage.getItem('users') || '[]');
   }
 
+  // Get current user
+  getCurrentUser(): any | null {
+    return JSON.parse(localStorage.getItem('currentUser') || 'null');
+  }
+
   // Add new user
   addUser(user: any): void {
     const users = this.getUsers();
     users.push(user);
     localStorage.setItem('users', JSON.stringify(users));
+  }
+
+  // Login
+  login(username: string, password: string): boolean {
+    const users = this.getUsers();
+    const user = users.find(u => u.username === username && u.password === password);
+    if (user) {
+      localStorage.setItem('currentUser', JSON.stringify(user));
+      return true;
+    }
+    return false;
+  }
+
+  // Logout
+  logout(): void {
+    localStorage.removeItem('currentUser');
   }
 
   // Check role of a user
@@ -37,6 +58,4 @@ export class UserService {
     const user = users.find(u => u.username === username);
     return user ? user.role : null;
   }
-
-  // Your additional methods to handle user functionalities can go here
 }

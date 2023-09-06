@@ -1,2 +1,22 @@
 <app-navbar></app-navbar>
-<router-outlet></router-outlet>
+
+<!-- Show content if user is authenticated -->
+<div *ngIf="isAuthenticated; else notAuthenticated">
+    Welcome, you are authenticated.
+    <!-- Show admin tools if the user is an admin -->
+    <div *ngIf="userRole === 'super_admin'">
+        <h1>Super Admin tools</h1>
+        <h1>Group Admin tools</h1>
+    </div>
+    <!-- Show group admin tools if the user is a group admin -->
+    <div *ngIf="userRole === 'group_admin'">
+        <h1>Group Admin tools</h1>
+    </div>
+    <router-outlet></router-outlet> //this displays to anyone
+</div>
+  
+<!-- Show content if user is not authenticated -->
+<ng-template #notAuthenticated>
+    You are not authenticated. Please log in.
+</ng-template>
+  
