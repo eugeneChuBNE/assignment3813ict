@@ -60,11 +60,11 @@ Furthermore, some technologies are expected to be used: MongoDB (data), Express.
 | ------------------------------------- | -------------- | --------|
 | **Documentation & Planning**                                     |
 | Drafting documents                    | 2 hours        | 1 hour  |
-| Implementing user interface/views     | 1 hour         |         |
-| Implementing authentication           | 2 hours        |         |
-| Implementing scaffolding              | 2.5 hours      |         |
-| Implementing some related functions   | 2.5 hours      |         |
-| Testing, finalising phase 1           | 2 hours        |         |
+| Implementing user interface/views     | 1 hour         | 1 hour  |
+| Implementing authentication           | 2 hours        | 3 hours |
+| Implementing scaffolding              | 2.5 hours      | not done|
+| Implementing some related functions   | 2.5 hours      | 2 hours |
+| Testing, finalising phase 1           | 2 hours        | 1 hour  |
 
 ### Phase 2
 
