@@ -6,9 +6,15 @@
 2. [What will be implemented](#what-will-be-implemented)
 3. [Users roles](#users-roles)
 4. [Work Breakdown Structure](#work-breakdown-structure)
-5. [Phase 1 details](#phase-1-details)
-6. [Phase 2 details](#phase-2-details)
-6. [Database Schema](#database-schema)
+5. [Data Structures](#data-structures)
+  - [User](#user)
+  - [Group](#group)
+  - [Channel](#channel)
+  - [Message](#message)
+6. [Angular Architecture](#angular-architecture)
+7. [Phase 1 details](#phase-1-details)
+8. [Phase 2 details](#phase-2-details)
+9. [Database Schema](#database-schema)
 
 ---
 
@@ -71,6 +77,51 @@ Furthermore, some technologies are expected to be used: MongoDB (data), Express.
 | Task                                  | Estimated time |  Actual |
 | ------------------------------------- | -------------- | --------|
 | **Details are about to come**                                    |
+
+---
+
+## Data Structures
+
+### User
+
+- `username`: A unique identifier for each user.
+- `password`: Password for authentication.
+- `role`: Role of the user (`super_admin`, `group_admin`, `user`).
+
+### Group
+
+- `name`: Name of the group.
+- `members`: Users in group.
+
+### Channel
+
+- `name`: Name of the channel.
+- `members`: Users in channel.
+
+### Message
+
+- `text`: Text content of the message.
+- `sender`: User who sent the message.
+
+---
+
+## Angular Architecture
+
+### Components
+
+- `AppComponent`: for routing and displaying the application layout.
+- `NavbarComponent`: for the navigation bar.
+- `GroupComponent`: for displaying and managing groups.
+
+### Services
+
+- `UserService`: for managing users and authentication.
+
+### Routing
+
+- `/`: currently just a landing page, will be implemented to be a dashboard in the next phase.
+- `/group`: Group listing and management.
+- `/channel`: Channel listing and management.
 
 ---
 
