@@ -11,7 +11,7 @@ export class UserService {
   initializeUsers(): void {
     if (!localStorage.getItem('users')) {
       const users = [
-        { username: 'test_sp', password: '123', role: 'super_admin', groups: [] },
+        { username: '', password: '', role: 'super_admin', groups: [] },
         { username: 'test_ga', password: '123', role: 'group_admin', groups: [] },
         { username: 'test_user', password: '123', role: 'user', groups: [] }
       ];
@@ -38,14 +38,21 @@ export class UserService {
 
   // Login
   login(username: string, password: string): boolean {
-    const users = this.getUsers();
-    const user = users.find(u => u.username === username && u.password === password);
-    if (user) {
-      localStorage.setItem('currentUser', JSON.stringify(user));
-      return true;
-    }
-    return false;
+  console.log('Attempting to log in:', username, password); 
+  const users = this.getUsers();
+  console.log('Available users:', users);  
+  
+  const user = users.find(u => u.username === username && u.password === password);
+  
+  if (user) {
+    console.log('User found:', user);
+    localStorage.setItem('currentUser', JSON.stringify(user));
+    return true;
+  } else {
+    console.log('User not found');  // Log when a user is not found
   }
+  return false;
+}
 
   // Logout
   logout(): void {

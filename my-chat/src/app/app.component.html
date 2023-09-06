@@ -1,22 +1,29 @@
 <app-navbar></app-navbar>
 
 <!-- Show content if user is authenticated -->
-<div *ngIf="isAuthenticated; else notAuthenticated">
-    Welcome, you are authenticated.
-    <!-- Show admin tools if the user is an admin -->
-    <div *ngIf="userRole === 'super_admin'">
-        <h1>Super Admin tools</h1>
-        <h1>Group Admin tools</h1>
-    </div>
-    <!-- Show group admin tools if the user is a group admin -->
-    <div *ngIf="userRole === 'group_admin'">
-        <h1>Group Admin tools</h1>
-    </div>
-    <router-outlet></router-outlet> //this displays to anyone
+<div *ngIf="isAuthenticated; else loginForm">
+  Welcome, you are authenticated.
+  <!-- Show admin tools if the user is an admin -->
+  <div *ngIf="userRole === 'super_admin'">
+    <h1>Super Admin tools</h1>
+    <h1>Group Admin tools</h1>
+  </div>
+  <!-- Show group admin tools if the user is a group admin -->
+  <div *ngIf="userRole === 'group_admin'">
+    <h1>Group Admin tools</h1>
+  </div>
+  <router-outlet></router-outlet> <!-- this displays to anyone -->
 </div>
-  
-<!-- Show content if user is not authenticated -->
-<ng-template #notAuthenticated>
-    You are not authenticated. Please log in.
+
+<!-- Show login form if user is not authenticated -->
+<ng-template #loginForm>
+  <form (submit)="onLogin()">
+    <label for="username">Username: </label>
+    <input type="text" id="username" name="username" [(ngModel)]="username">
+    <br>
+    <label for="password">Password: </label>
+    <input type="password" id="password" name="password" [(ngModel)]="password">
+    <br>
+    <button type="submit">Login</button>
+  </form>
 </ng-template>
-  
