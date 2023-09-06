@@ -18,13 +18,30 @@
 
 <!-- Show login form if user is not authenticated -->
 <ng-template #loginForm>
-  <form (submit)="onLogin()">
-    <label for="username">Username: </label>
-    <input type="text" id="username" name="username" [(ngModel)]="username">
-    <br>
-    <label for="password">Password: </label>
-    <input type="password" id="password" name="password" [(ngModel)]="password">
-    <br>
-    <button type="submit">Login</button>
-  </form>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card mt-5">
+          <div class="card-header">
+            Login
+          </div>
+          <div class="card-body">
+            <form (submit)="onLogin()">
+              <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" [(ngModel)]="username" class="form-control">
+              </div>
+              <div class="form-group mt-3">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" [(ngModel)]="password" class="form-control">
+              </div>
+              <div class="form-group mt-4">
+                <button type="submit" class="btn btn-primary">Login</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </ng-template>
