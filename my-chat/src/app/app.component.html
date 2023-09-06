@@ -12,6 +12,7 @@
   <div *ngIf="userRole === 'group_admin'">
     <h1>Group Admin tools</h1>
   </div>
+  <app-group *ngIf="isAuthenticated"></app-group>
   <router-outlet></router-outlet> <!-- this displays to anyone -->
 </div>
 

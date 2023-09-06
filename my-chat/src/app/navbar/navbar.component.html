@@ -5,11 +5,15 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
+            <div class="navbar-nav mr-auto">
                 <a class="nav-link" routerLink="/">Dashboard</a>
                 <a class="nav-link" routerLink="/group">Groups</a>
                 <a class="nav-link" routerLink="/channel">Channels</a>
                 <a class="nav-link" routerLink="/conversation">Conversations</a>
+            </div>
+            <!-- Logout Button, displayed only when isAuthenticated is true -->
+            <div class="navbar-nav ml-auto">
+                <button class="btn btn-primary" *ngIf="isAuthenticated" (click)="logout()">Logout</button>
             </div>
         </div>
     </div>
