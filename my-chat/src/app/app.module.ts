@@ -7,13 +7,17 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { GroupComponent } from './group/group.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ChannelComponent } from './channel/channel.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     GroupComponent,
-    ChannelComponent
+    ChannelComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

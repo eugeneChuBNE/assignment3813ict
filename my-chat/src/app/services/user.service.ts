@@ -11,7 +11,7 @@ export class UserService {
   initializeUsers(): void {
     if (!localStorage.getItem('users')) {
       const users = [
-        { username: '', password: '', role: 'super_admin', groups: [] },
+        { username: 'admin', password: '123', role: 'super_admin', groups: [] },
         { username: 'test_ga', password: '123', role: 'group_admin', groups: [] },
         { username: 'test_user', password: '123', role: 'user', groups: [] }
       ];
